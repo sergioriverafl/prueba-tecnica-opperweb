@@ -43,7 +43,7 @@
         },
         mounted: function(){
 
-            setInterval(()=>{             
+            setInterval(()=>{  
 
                 if( this.imageSelected == 3 ){
 
@@ -54,7 +54,7 @@
                     this.imageSelected ++;
                 }        
 
-            }, 2000)
+            }, 5000)
         },
         methods:{
         }

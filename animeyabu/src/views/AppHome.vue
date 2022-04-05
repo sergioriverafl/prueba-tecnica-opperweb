@@ -17,11 +17,11 @@
               Categorías
             </h2>
 
-            <ul class="flex flex-col gap-1">
-              <li class="text-sm appearance hover:underline">
+            <ul class="flex flex-col gap-1 pl-8">
+              <li class="text-sm appearance hover:underline list-disc">
                 <router-link to="/app/lista-categorias">Ver todas</router-link>
               </li>
-              <li class="text-sm appearance hover:underline">
+              <li class="text-sm appearance hover:underline list-disc">
                 <router-link to="/app/crear-categoria">Crear</router-link>
               </li>
             </ul>
