@@ -3,23 +3,9 @@
 
         <div class="hidden md:flex flex-col items-center justify-around gap-16 w-full ">
 
-            <div class="flex items-center justify-center">
-                <div class="rounded-full w-80 h-80 bg-secondary" >
-                    <img v-if="imageSelected === 1" src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10 hover:scale-125">
-                    <img v-if="imageSelected === 2" src="./../assets/img/img-slide-2.png" alt="" class="h-96 pt-10 hover:scale-125">
-                    <img v-if="imageSelected === 3" src="./../assets/img/img-slide-3.png" alt="" class="h-96 pt-10 hover:scale-125">
-                </div>
-
-            </div>
-
-            <div class="flex flex-col gap-8 items-center">
-                <h1 class="font-bold text-5xl text-white">anime<span class="text-primary">yabu.</span></h1>
-                <p class="text-white text-center w-80">
-                    Ver anime en línea en HD, subtitulado o doblado,
-                    en tu celular o computadora.
-                    ¡Animeyabu, tu portal de anime en línea! 
-                </p>
-            </div>
+            <slideA v-if="imageSelected === 1" />
+            <slideB v-if="imageSelected === 2" />
+            <slideC v-if="imageSelected === 3" />            
 
             <div class="flex gap-3">
                 <div :class="[ imageSelected === 1 ? 'bg-white' : 'bg-gray-400']" class="rounded-lg w-8 h-2 cursor-pointer" @click="imageSelected = 1"></div>
@@ -34,18 +20,47 @@
 
 <script>
 
+import slideA from "@/components/slides/slideA.vue" 
+import slideB from "@/components/slides/slideB" 
+import slideC from "@/components/slides/slideC" 
+
     export default {
         name: 'slideAnimeyabu',
+        components:{
+            slideA,
+            slideB,
+            slideC
+        },
         data(){
             return{
                 imageSelected: 1,
+                nIntervId: '',    
             }
         },
         mounted: function(){
 
-            // 
+            this.changeImage()
+        },
+        unmounted: function(){
+
+            clearInterval(this.nIntervId)
+
         },
         methods:{
+            changeImage(){
+                this.nIntervId = setInterval(this.execSlide, 5000);
+            },
+            execSlide: function(){
+
+                if( this.imageSelected == 3 ){
+
+                    this.imageSelected = 1;
+
+                } else {
+
+                    this.imageSelected ++;
+                }              
+            }
         }
     }
 </script>
