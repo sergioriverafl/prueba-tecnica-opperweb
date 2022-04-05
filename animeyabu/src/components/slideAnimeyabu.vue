@@ -4,8 +4,10 @@
         <div class="hidden md:flex flex-col items-center justify-around gap-16 w-full ">
 
             <div class="flex items-center justify-center">
-                <div class="rounded-full w-80 h-80 bg-secondary">
-                    <img src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
+                <div class="rounded-full w-80 h-80 bg-secondary" >
+                    <img v-if="imageSelected === 1" src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
+                    <img v-if="imageSelected === 2" src="./../assets/img/img-slide-2.png" alt="" class="h-96 pt-10">
+                    <img v-if="imageSelected === 3" src="./../assets/img/img-slide-3.png" alt="" class="h-96 pt-10">
                 </div>
 
             </div>
@@ -20,9 +22,9 @@
             </div>
 
             <div class="flex gap-3">
-                <div class="bg-white rounded-lg w-8 h-2 cursor-pointer" @click="selectImage('img-slide-1.png')"></div>
-                <div class="bg-gray-400 rounded-lg w-8 h-2 cursor-pointer" @click="selectImage('img-slide-2.png')"></div>
-                <div class="bg-gray-400 rounded-lg w-8 h-2 cursor-pointer" @click="selectImage('img-slide-3.png')"></div>
+                <div :class="[ imageSelected === 1 ? 'bg-white' : 'bg-gray-400']" class="rounded-lg w-8 h-2 cursor-pointer" @click="imageSelected = 1"></div>
+                <div :class="[ imageSelected === 2 ? 'bg-white' : 'bg-gray-400']" class="rounded-lg w-8 h-2 cursor-pointer" @click="imageSelected = 2"></div>
+                <div :class="[ imageSelected === 3 ? 'bg-white' : 'bg-gray-400']" class="rounded-lg w-8 h-2 cursor-pointer" @click="imageSelected = 3"></div>
             </div>
 
         </div>
@@ -36,15 +38,12 @@
         name: 'slideAnimeyabu',
         data(){
             return{
-                imageSlide: 'img-slide-1.png',
+                imageSelected: 1,
             }
         },
         mounted: function(){
         },
         methods:{
-            selectImage: function(image){
-                this.imageSlide = image
-            }
         }
     }
 </script>
