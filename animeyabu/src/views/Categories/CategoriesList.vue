@@ -58,6 +58,8 @@
 
 <script>
 
+import axios from "axios";
+
 
     export default {
         name: 'CategoriesList',
@@ -72,17 +74,25 @@
         },
         mounted: function () {
 
+            this.getCategories();
+
         },
         methods: {
-            //   GetListFarmer: function (id_user_get) {
-            //     this.SearchingFarmers = true;
-            //     axios.post(API_ROUTER.API_APLICATION_MOVIL + "farms/farms_by_user.php", {
-            //       id_user: id_user_get,
-            //     }).then((response) => {
-            //         this.SearchingFarmers = false;
-            //         this.ArrayFincas = response.data;
-            //       });
-            //   },
+            getCategories: function () {
+
+                let API_KEY = 'RtYujtghf4534TThglUY6556tyuGHJGHHGH'
+
+                axios.get("https://texxt.tk/api/v1/categoria", {
+                    params:{
+                        apiKey: API_KEY,
+                        utcTimeStamp: new Date(),
+                        signature: "756403b52606111ee553e75e927bc0d92cc376d2aa63d469ee6d851e2cc04e9a"
+                    }
+                    
+                }).then((response) => {
+                    console.table(response)
+                });
+            },
         }
     }
 </script>

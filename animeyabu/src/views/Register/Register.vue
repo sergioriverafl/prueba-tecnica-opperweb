@@ -2,7 +2,7 @@
 <div class="bg-black">
         <div class="grid grid-cols-1 md:grid-cols-2">
 
-            <div class="flex flex-col h-min-screen">
+            <div class="flex flex-col h-min-screen px-4">
 
                 <div class="flex gap-3 items-center pl-6 pt-5">
                     <img src="@/assets/img/animeyabu.png" alt="" class="h-10">
@@ -72,13 +72,13 @@
                             </div>
 
                             <div class="flex flex-col">
-                                <label for="password" class="text-white text-sm">Confirmar contraseña</label>
-                                <input type="password" id="password" placeholder="• • • • • • •"
+                                <label for="password-confirm" class="text-white text-sm">Confirmar contraseña</label>
+                                <input type="password" id="password-confirm" placeholder="• • • • • • •"
                                     class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
                             </div>
 
-                            <button type="submit"
+                            <button type="button" @click="registerUser"
                                 class="flex items-center justify-center text-purple-900 bg-secondary w-full h-14 px-4 rounded-md border-2 border-white font-semibold">
                                 Registrar
                             </button>
@@ -86,7 +86,11 @@
                     </div>
 
                     <div class="w-full md:w-80">
-                        <h6 class="text-white text-center">Registrate tambén con</h6>
+                        <div class="flex flex-wrap gap-3 items-center justify-center">
+                            <div class="w-8 md:w-12 h-1 bg-white border border-white"></div>
+                            <h6 class="text-white text-center">Registrate también con</h6>
+                            <div class="w-8 md:w-12 h-1 bg-white border border-white"></div>
+                        </div>
                         <div class="flex items-center justify-around">
 
                             <div class="flex gap-4 items-center mt-5">
@@ -131,47 +135,60 @@
             </div>
 
 
-            <div class="hidden md:flex h-min-screen bg-terciary p-16">
+            <slideAnimeyabu />
 
-                <div class="hidden md:flex flex-col items-center justify-around gap-16 w-full h-screen">
-
-                    <div class="flex items-center justify-center">
-                        <div class="rounded-full w-80 h-80 bg-secondary">
-                            <img src="@/assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
-                        </div>                        
-                    </div>
-    
-                    <div class="flex flex-col gap-8 items-center">
-                        <h1 class="font-bold text-5xl text-white">anime<span class="text-primary">yabu.</span></h1>
-                        <p class="text-white text-center w-80">
-                            Ver anime en línea en HD, subtitulado o doblado,
-                            en tu celular o computadora.
-                            ¡Animeyabu, tu portal de anime en línea!
-                        </p>
-                    </div>
-    
-                    <div class="flex gap-3">
-                        <div class="bg-white rounded-lg w-8 h-2 cursor-pointer"></div>
-                        <div class="bg-gray-400 rounded-lg w-8 h-2 cursor-pointer"></div>
-                        <div class="bg-gray-400 rounded-lg w-8 h-2 cursor-pointer"></div>
-                    </div>
-
-                </div>               
-
-            </div>
         </div>
     </div>
 </template>
 
 <script>
 
-
-
+import axios from 'axios';
+import CONSTANS from '@/costants'
+import Swal from 'sweetalert2'
+import slideAnimeyabu from '@/components/slideAnimeyabu.vue'
 
   export default {
     name: 'Register',
     components: {
-      
+        slideAnimeyabu  
+    },
+    data(){
+        return{
+
+        }
+    }, 
+    mounted: function(){
+
+    }, 
+    methods:{
+        registerUser: function () {
+
+                let API_KEY = 'VBNfgfTYrt5666FGHFG6FGH65GHFGHF656g';
+                // let utcTimeStamp = 'VBNfgfTYrt5666FGHFG6FGH65GHFGHF656g';
+                let signature = 'b20cf1f851072d00ca9b99eb00c495f71eb74ef63db3229e58c46401ded3aec8';
+
+                axios.post("https://texxt.tk/api/v1/register", {                         
+                        name : "randomusername12",
+                        lastname : "randomusername12",
+                        telephone : "12345678932",
+                        identy_document : "12345678921",
+                        type_user_id : "2",
+                        verify_tc : "1",
+                        password : "strongkey12321",
+                        password_confirmation : "strongkey12321",
+                        email : "randommail21@mail.com",
+                        apiKey: API_KEY,
+                        utcTimeStamp: new Date(),
+                        signature: "756403b52606111ee553e75e927bc0d92cc376d2aa63d469ee6d851e2cc04e9a",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    
+                }).then((response) => {
+                    console.table(response)
+                });
+        },
     }
   }
 </script>
