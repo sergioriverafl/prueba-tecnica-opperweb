@@ -3,7 +3,7 @@
 
         <h1 class="text-white text-5xl my-14 font-bold">Actualizar categoría</h1>
 
-        <form class="flex flex-col gap-12 w-80">
+        <form class="flex flex-col gap-12 w-full md:w-80">
             <div class="flex flex-col">
                 <label for="category-name" class="text-white text-sm">Nombre de la categoría</label>
                 <input type="text" id="category-name"
