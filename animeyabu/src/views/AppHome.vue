@@ -87,7 +87,7 @@
     },
     methods: {
       closeSession: function(){
-        this.$router.push("/loguin/");
+        this.$router.push("/login/");
       },
     }
   }

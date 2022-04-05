@@ -34,29 +34,57 @@
 
                     <div>
                         <form action="" autocomplete="off" class="flex flex-col gap-4 w-full md:w-80">
-                            <div class="flex flex-col">
+
+                            <div class="flex justify-between items-center text-white">
+                                Tipo de persona 
+                                <label class="text-sm font-regular">
+                                    <input type="radio" required="required" class="mt-1 mr-2" name="type_person" value="natural" v-model="typePerson">
+                                    Natural
+                                </label>    
+
+                                <label class="text-sm font-regular">
+                                    <input type="radio" required="required" class="mt-1 mr-2" name="type_person" value="juridica" v-model="typePerson">
+                                    Jurídica
+                                </label>  
+                            </div> 
+
+                            <div class="flex flex-col" v-if="typePerson == 'natural'">
                                 <label for="name" class="text-white text-sm">Nombre</label>
                                 <input type="text" id="name" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="flex flex-col" v-if="typePerson == 'natural'">
                                 <label for="last-name" class="text-white text-sm">Apellido</label>
                                 <input type="text" id="last-name" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="flex flex-col" v-if="typePerson == 'natural'">
                                 <label for="phone" class="text-white text-sm">Teléfono</label>
                                 <input type="number" id="phone" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="flex flex-col" v-if="typePerson == 'natural'">
                                 <label for="number-identification" class="text-white text-sm">Número de identificación</label>
                                 <input type="number" id="number-identification" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
                             </div>
+
+                            <div class="flex flex-col" v-if="typePerson == 'juridica'">
+                                <label for="name" class="text-white text-sm">Razón social</label>
+                                <input type="text" id="name" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
+                            </div>
+
+                            <div class="flex flex-col" v-if="typePerson == 'juridica'">
+                                <label for="number-identification" class="text-white text-sm">Nit</label>
+                                <input type="number" id="number-identification" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
+                            </div>
+
+                            
 
                             <div class="flex flex-col">
                                 <label for="user" class="text-white text-sm">Email</label>
@@ -129,7 +157,7 @@
                     </div>
 
                     <div class="w-full md:w-80">
-                        <h6 class="text-white text-center">Ya estas registrado? <router-link to="/loguin" class="text-secondary">Acceder</router-link></h6>
+                        <h6 class="text-white text-center">Ya estas registrado? <router-link to="/login" class="text-secondary">Acceder</router-link></h6>
                     </div>
                 </div>
             </div>
@@ -152,6 +180,7 @@ import slideAnimeyabu from '@/components/slideAnimeyabu.vue'
     },
     data(){
         return{
+            typePerson: 'natural'
 
         }
     }, 

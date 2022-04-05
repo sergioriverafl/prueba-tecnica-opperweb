@@ -2,7 +2,7 @@
 <div class="bg-black">
         <div class="grid grid-cols-1 md:grid-cols-2">
 
-            <div class="flex flex-col h-screen md:h-min-screen px-4">
+            <div class="flex flex-col h-min-screen px-4">
 
                 <div class="flex gap-3 items-center pl-6 pt-5">
                     <img src="@/assets/img/animeyabu.png" alt="" class="h-10">
@@ -48,14 +48,14 @@
                                     required>
 
                                 <div @click="viewPassword()" class="min-mt-36 mr-2 text-gray-50 cursor-pointer z-10 relative float-right">
-                                    <svg v-if="typePassword === 'password'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
 
-                                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                                    </svg>
+                                    <svg v-if="typePassword === 'password'" class="h-7 w-7" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="eye fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g>
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"></path><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"></path></g></svg>
+
+                                    <svg v-else  class="h-7 w-7" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="eye slash fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g>
+                                        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.027 7.027 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.088z"></path>
+                                        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6l-12-12 .708-.708 12 12-.708.707z"></path></g></svg>
+
                                 </div>
                                 
                                 <div class="flex justify-end">
@@ -138,7 +138,7 @@ import slideAnimeyabu from '@/components/slideAnimeyabu'
 
 
   export default {
-    name: 'Loguin',
+    name: 'Login',
     components: {
         slideAnimeyabu      
     },
