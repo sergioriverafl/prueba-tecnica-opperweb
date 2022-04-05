@@ -5,9 +5,9 @@
 
             <div class="flex items-center justify-center">
                 <div class="rounded-full w-80 h-80 bg-secondary" >
-                    <img v-if="imageSelected === 1" src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
-                    <img v-if="imageSelected === 2" src="./../assets/img/img-slide-2.png" alt="" class="h-96 pt-10">
-                    <img v-if="imageSelected === 3" src="./../assets/img/img-slide-3.png" alt="" class="h-96 pt-10">
+                    <img v-if="imageSelected === 1" src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10 hover:scale-125">
+                    <img v-if="imageSelected === 2" src="./../assets/img/img-slide-2.png" alt="" class="h-96 pt-10 hover:scale-125">
+                    <img v-if="imageSelected === 3" src="./../assets/img/img-slide-3.png" alt="" class="h-96 pt-10 hover:scale-125">
                 </div>
 
             </div>
