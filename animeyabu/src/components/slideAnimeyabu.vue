@@ -15,7 +15,7 @@
                 <p class="text-white text-center w-80">
                     Ver anime en línea en HD, subtitulado o doblado,
                     en tu celular o computadora.
-                    ¡Animeyabu, tu portal de anime en línea!
+                    ¡Animeyabu, tu portal de anime en línea! 
                 </p>
             </div>
 
