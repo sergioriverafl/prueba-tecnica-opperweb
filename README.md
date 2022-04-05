@@ -1,7 +1,5 @@
 # prueba-tecnica-opperweb
 
-# prueba-talent-speakers
-
 ## Project setup
 ```
 npm install
