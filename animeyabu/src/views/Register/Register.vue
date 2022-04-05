@@ -20,25 +20,48 @@
 
                 <div class="flex flex-col gap-8 items-center justify-center h-full py-8">
 
-                    <div class="flex flex-col gap-3 items-center justify-center">
+                    <div class="flex flex-row gap-3 items-end justify-center">
 
-                        <img src="@/assets/img/welcome.png" alt="" class="h-24">
+                        <img src="@/assets/img/yabu-register.png" alt="" class="h-24">
 
+                        <div class="flex flex-col gap-1">
+                            <h2 class="font-bold text-xl text-white">ようこそ!</h2>
 
-                        <h2 class="font-bold text-xl text-white">ひさしぶり!</h2>
-
-                        <h5 class="italic font-semibol text-white">¡Hola, te hemos extrañado!</h5>
+                            <h5 class="italic font-semibol text-white">¡Hola, te hemos extrañado!</h5>
+                        </div>                     
 
                     </div>
 
                     <div>
                         <form action="" autocomplete="off" class="flex flex-col gap-4 w-full md:w-80">
                             <div class="flex flex-col">
-                                <label for="user" class="text-white text-sm">Email</label>
-                                <input type="email" id="user" placeholder="usuario@"
-                                    class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                <label for="name" class="text-white text-sm">Nombre</label>
+                                <input type="text" id="name" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
-                                <span class="text-right text-error">Email inválido</span>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="last-name" class="text-white text-sm">Apellido</label>
+                                <input type="text" id="last-name" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="phone" class="text-white text-sm">Teléfono</label>
+                                <input type="number" id="phone" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="number-identification" class="text-white text-sm">Número de identificación</label>
+                                <input type="number" id="number-identification" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="user" class="text-white text-sm">Email</label>
+                                <input type="email" id="user" placeholder="usuario@yabu.com" class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
                             </div>
 
                             <div class="flex flex-col">
@@ -46,12 +69,18 @@
                                 <input type="password" id="password" placeholder="• • • • • • •"
                                     class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
                                     required>
-                                <a href="#" class="text-right text-secondary">¿Olvido su contraseña?</a>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="password" class="text-white text-sm">Confirmar contraseña</label>
+                                <input type="password" id="password" placeholder="• • • • • • •"
+                                    class="bg-gray-400 px-4 py-1 rounded-md border-2 border-white placeholder:text-white text-white w-full h-14"
+                                    required>
                             </div>
 
                             <button type="submit"
                                 class="flex items-center justify-center text-purple-900 bg-secondary w-full h-14 px-4 rounded-md border-2 border-white font-semibold">
-                                Acceder
+                                Registrar
                             </button>
                         </form>
                     </div>
@@ -71,6 +100,9 @@
                                     </svg>
                                 </div>
 
+
+
+
                                 <div class="bg-silver border-2 border-white rounded-lg p-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" width="24" height="24">
                                         <path fill="none" d="M0 0h24v24H0z" />
@@ -88,14 +120,12 @@
                                             fill="rgba(255,255,255,1)" />
                                     </svg>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
 
                     <div class="w-full md:w-80">
-                        <h6 class="text-white text-center">Quieres registrarte? <router-link to="/registro" class="text-secondary">Registrate</router-link></h6>
+                        <h6 class="text-white text-center">Ya estas registrado? <router-link to="/loguin" class="text-secondary">Acceder</router-link></h6>
                     </div>
                 </div>
             </div>
@@ -103,13 +133,12 @@
 
             <div class="hidden md:flex h-min-screen bg-terciary p-16">
 
-                <div class="hidden md:flex flex-col items-center justify-around gap-16 w-full sticky top-0">
+                <div class="hidden md:flex flex-col items-center justify-around gap-16 w-full h-screen">
 
                     <div class="flex items-center justify-center">
                         <div class="rounded-full w-80 h-80 bg-secondary">
                             <img src="@/assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
-                        </div>
-                        
+                        </div>                        
                     </div>
     
                     <div class="flex flex-col gap-8 items-center">
@@ -132,16 +161,17 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
 
 
-export default {
-  name: 'Loguin',
-  components: {
-    
+
+
+  export default {
+    name: 'Register',
+    components: {
+      
+    }
   }
-}
 </script>

@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Loguin from '../views/Loguin/Loguin.vue'
+import Register from '../views/Register/Register.vue'
+
+
 import AppHome from '../views/AppHome.vue'
 import Home from '../views/Home/Home.vue'
 
@@ -14,8 +17,12 @@ import CategoriesUpdate from '../views/Categories/CategoriesUpdate.vue'
 const routes = [
   { path: '/', component: Loguin },
   { path: '/loguin', name: 'Loguin', component: Loguin },
+  { path: '/registro', name: 'Register', component: Register },
+
+  
 
   { path: '/app/', name: 'AppHome', component: AppHome,
+    redirect: '/app/inicio',
     children: [
       { path: 'inicio', name: 'Home', component: Home },
       { path: 'lista-categorias', name: 'CategoriesList', component: CategoriesList },

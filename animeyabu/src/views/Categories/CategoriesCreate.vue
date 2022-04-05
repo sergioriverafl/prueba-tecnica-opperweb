@@ -21,9 +21,20 @@
 
 
 export default {
-  name: 'CategoriesCreate',
-  components: {
+    name: 'CategoriesCreate',
+    components: {
     
+    },
+    data(){
+      return{
+
+      }
+    },
+    mounted: function(){
+
+    },
+    methods:{
+
+    }
   }
-}
 </script>
