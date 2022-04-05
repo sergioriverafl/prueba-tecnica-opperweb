@@ -28,27 +28,17 @@
 
 <script>
 
-import Swal from 'sweetalert2'
-import HomeMenuGlobal from '@/components/HomeMenuGlobal.vue';
 
   export default {
     name: 'Home',
     components: {
-      HomeMenuGlobal
     },
     data(){
       return{
 
       }
     },
-    mounted: function(){
-
-      Swal.fire({
-        title: 'Error!',
-        text: 'Do you want to continue',
-        icon: 'error',
-        confirmButtonText: 'Cool'
-      })
+    mounted: function(){  
 
     },
     methods:{

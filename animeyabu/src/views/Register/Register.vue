@@ -78,7 +78,7 @@
                                     required>
                             </div>
 
-                            <button type="button" @click="registerUser"
+                            <button type="button"
                                 class="flex items-center justify-center text-purple-900 bg-secondary w-full h-14 px-4 rounded-md border-2 border-white font-semibold">
                                 Registrar
                             </button>
@@ -143,9 +143,6 @@
 
 <script>
 
-import axios from 'axios';
-import CONSTANS from '@/costants'
-import Swal from 'sweetalert2'
 import slideAnimeyabu from '@/components/slideAnimeyabu.vue'
 
   export default {
@@ -162,33 +159,6 @@ import slideAnimeyabu from '@/components/slideAnimeyabu.vue'
 
     }, 
     methods:{
-        registerUser: function () {
-
-                let API_KEY = 'VBNfgfTYrt5666FGHFG6FGH65GHFGHF656g';
-                // let utcTimeStamp = 'VBNfgfTYrt5666FGHFG6FGH65GHFGHF656g';
-                let signature = 'b20cf1f851072d00ca9b99eb00c495f71eb74ef63db3229e58c46401ded3aec8';
-
-                axios.post("https://texxt.tk/api/v1/register", {                         
-                        name : "randomusername12",
-                        lastname : "randomusername12",
-                        telephone : "12345678932",
-                        identy_document : "12345678921",
-                        type_user_id : "2",
-                        verify_tc : "1",
-                        password : "strongkey12321",
-                        password_confirmation : "strongkey12321",
-                        email : "randommail21@mail.com",
-                        apiKey: API_KEY,
-                        utcTimeStamp: new Date(),
-                        signature: "756403b52606111ee553e75e927bc0d92cc376d2aa63d469ee6d851e2cc04e9a",
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                    
-                }).then((response) => {
-                    console.table(response)
-                });
-        },
     }
   }
 </script>

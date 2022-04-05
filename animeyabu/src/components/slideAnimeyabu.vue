@@ -5,7 +5,7 @@
 
             <div class="flex items-center justify-center">
                 <div class="rounded-full w-80 h-80 bg-secondary">
-                    <img :src="'./../assets/img/img-slide-1.png'+imageSlide" alt="" class="h-96 pt-10">
+                    <img src="./../assets/img/img-slide-1.png" alt="" class="h-96 pt-10">
                 </div>
 
             </div>

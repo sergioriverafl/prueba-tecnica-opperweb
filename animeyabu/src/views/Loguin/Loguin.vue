@@ -131,7 +131,6 @@
 <script>
 
 import axios from 'axios';
-// import moment from 'moment';
 import CONSTANS from '@/costants'
 const sha256 = require ("js-sha256").sha256
 import Swal from 'sweetalert2'

@@ -69,12 +69,12 @@
 <script>
 
 
-  import HomeMenuGlobal from '@/components/HomeMenuGlobal.vue';
+
 
   export default {
     name: 'AppHome',
     components: {
-      HomeMenuGlobal
+      
     },
     data() {
       return {
