@@ -4,10 +4,7 @@
 
             <div class="flex flex-col h-min-screen px-4">
 
-                <div class="flex gap-3 items-center pl-6 pt-5">
-                    <img src="@/assets/img/animeyabu.png" alt="" class="h-10">
-                    <h1 class="font-bold text-2xl text-white">anime<span class="text-primary">yabu</span></h1>
-                </div>
+                <headerAnimeyabu />
 
                 <div class="flex items-start pl-6 pt-5">
                     <a href="javascript:history.back()">
@@ -94,6 +91,9 @@ const sha256 = require ("js-sha256").sha256
 import Swal from 'sweetalert2'
 import slideAnimeyabu from '@/components/slideAnimeyabu'
 import socialMedia from '@/components/socialMedia.vue'
+import headerAnimeyabu from '@/components/headerAnimeyabu.vue'
+
+
 
 
 
@@ -102,7 +102,8 @@ import socialMedia from '@/components/socialMedia.vue'
     name: 'Login',
     components: {
         slideAnimeyabu,
-        socialMedia    
+        socialMedia,
+        headerAnimeyabu
     },
     data(){
         return{

@@ -4,10 +4,7 @@
 
             <div class="flex flex-col h-min-screen px-4">
 
-                <div class="flex gap-3 items-center pl-6 pt-5">
-                    <img src="@/assets/img/animeyabu.png" alt="" class="h-10">
-                    <h1 class="font-bold text-2xl text-white">anime<span class="text-primary">yabu</span></h1>
-                </div>
+                <headerAnimeyabu />
 
                 <div class="flex items-start pl-6 pt-5">
                     <a href="javascript:history.back()">
@@ -132,12 +129,16 @@
 
 import slideAnimeyabu from '@/components/slideAnimeyabu.vue'
 import socialMedia from '@/components/socialMedia.vue'
+import headerAnimeyabu from '@/components/headerAnimeyabu.vue'
+
 
   export default {
     name: 'Register',
     components: {
         slideAnimeyabu,
-        socialMedia
+        socialMedia,
+        headerAnimeyabu
+        
     },
     data(){
         return{
