@@ -93,12 +93,7 @@ import slideAnimeyabu from '@/components/slideAnimeyabu'
 import socialMedia from '@/components/socialMedia.vue'
 import headerAnimeyabu from '@/components/headerAnimeyabu.vue'
 
-
-
-
-
-
-  export default {
+export default {
     name: 'Login',
     components: {
         slideAnimeyabu,
@@ -113,17 +108,14 @@ import headerAnimeyabu from '@/components/headerAnimeyabu.vue'
         }
     }, 
     mounted: function(){
-
     }, 
     methods:{
         viewPassword: function(){
             this.typePassword = this.typePassword == 'password' ? 'text' : 'password'
         },
-
         loguinUser: function () {
 
             let utcTimeStamp = new Date().toISOString();
-
             let signature = sha256(CONSTANS.PRIVATE_KEY +','+ CONSTANS.PUBLIC_KEY +','+ utcTimeStamp);    
 
             axios.post(`${CONSTANS.API_ROUTE}/${CONSTANS.API_VERSION}/login`, {                         
